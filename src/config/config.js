@@ -1,14 +1,14 @@
-const {createPool} = require('mysql')
+const { createPool } = require('mysql');
 
-const {config} = require("dotenv")
+const { config } = require("dotenv");
 
-config()
+config();
 
 const db = createPool({
-    host: process.env.HOST_NAME,
-    user: process.env.USER_NAME,
-    password: process.env.PASSWORD,
-    database: process.env.DB_NAME
-})
+    host: "localhost",
+    user: "root",
+    password: "Akashikabuto7",
+    database: "db_vehicle"
+});
 
-module.exports= {db}
+module.exports = { db };

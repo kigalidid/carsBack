@@ -1,22 +1,24 @@
-const express = require("express")
-const {json,urlencoded} =require("express")
-const cors = require("cors")
-const morgan = require("morgan")
+const express = require("express");
+const { json, urlencoded } = require("express");
+const cors = require("cors");
+const morgan = require("morgan");
 
-const auth = require("./routes/auth")
-const User = require("./routes/user")
+const auth = require("./routes/auth");
+const User = require("./routes/user");
+const Admin = require("./routes/Admin");
 
 
 
 const app = express();
 
-app.use(morgan("dev"))
-app.use(cors())
-app.use(json())
-app.use("/auth",auth)
-app.use("/user",User)
+app.use(morgan("dev"));
+app.use(cors());
+app.use(json());
+app.use("/auth", auth);
+app.use("/user", User);
+app.use("/admin", Admin);
 
-app.use(urlencoded({extended:false}))
+app.use(urlencoded({ extended: false }));
 
 
 
